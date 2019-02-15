@@ -5,7 +5,7 @@ vue和react都是采用diff算法来对比新旧虚拟节点，从而更新节�
 
 ### vue部分源码如下：
 
-```
+```js
 // vue项目  src/core/vdom/patch.js  -488行
 // oldCh 是一个旧虚拟节点数组， 
  if (isUndef(oldKeyToIdx)) oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx)
@@ -16,7 +16,7 @@ vue和react都是采用diff算法来对比新旧虚拟节点，从而更新节�
 
 ### 创建map函数
 
-```
+```js
 function createKeyToOldIdx (children, beginIdx, endIdx) {
   let i, key
   const map = {}
@@ -30,7 +30,7 @@ function createKeyToOldIdx (children, beginIdx, endIdx) {
 
 ### 遍历寻找
 
-```
+```js
 // sameVnode 是对比新旧节点是否相同的函数
  function findIdxInOld (node, oldCh, start, end) {
     for (let i = start; i < end; i++) {
